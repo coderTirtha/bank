@@ -11,15 +11,17 @@ document.getElementById('btn-deposit').addEventListener('click', function () {
     const prevBalanceTotalString = balanceContainer.innerText;
     const prevBalanceTotal = parseFloat(prevBalanceTotalString);
 
-    if (newDepositString !== '') {
+    if (newDepositString === '') {
+        alert("Please enter a depository amount");
+    } else if (isNaN(newDeposit)) {
+        alert("Depository amount must be a valid number");
+    } else {
         // summation of new amount and previous amount
         const currentDepositTotal = prevDepositTotal + newDeposit;
         // changing the previous value of deposit section
         depositContainer.innerText = currentDepositTotal;
         const currentBalanceTotal = prevBalanceTotal + newDeposit;
         balanceContainer.innerText = currentBalanceTotal;
-    } else {
-        alert("Please enter a depository amount");
     }
 
     depositAmount.value = '';
@@ -40,7 +42,10 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
 
     if (newWithdrawString === '') {
         alert("Please enter a withdrawal amount");
-    } else if (prevBalanceTotal > newWithdraw) {
+    } else if (isNaN(newWithdraw)) {
+        alert("Withdrawal amount must be a valid number");
+    }
+     else if (prevBalanceTotal > newWithdraw) {
         const currentWithdrawTotal = prevWithdrawTotal + newWithdraw;
         withdrawContainer.innerText = currentWithdrawTotal;
         const currentBalanceTotal = prevBalanceTotal - newWithdraw;
