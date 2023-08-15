@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank</title>
+    <!-- Google fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind and DaisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <style>
+        .font-work-sans {
+            font-family: 'Work Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="font-work-sans">
+    <header class="container mx-auto my-4">
+        <h1 class="text-5xl text-center font-medium">Welcome to your <span class="text-violet-500 font-bold">Bank</span>!</h1>
+    </header>
+    <main class="container mx-auto">
+        <section class="my-8 bg-accent px-8 py-12 rounded-lg">
+            <h2 class="text-3xl font-semibold text-center text-info-content mb-8">Please Login!</h2>
+            <div class="space-y-8">
+                <input type="email" id="email" placeholder="Put your email here" class="input input-bordered input-primary w-full"
+                    required />
+                <input type="password" id="password" placeholder="Enter your password"
+                    class="input input-bordered input-primary w-full" required />
+                <button id="btn-submit" type="submit" class="btn bg-primary btn-primary">Submit</button>
+            </div>
+        </section>
+    </main>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

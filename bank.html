@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank | Vault</title>
+    <!-- Google fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind and DaisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <style>
+        .font-work-sans {
+            font-family: 'Work Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="font-work-sans">
+    <header class="container mx-auto my-4">
+        <h1 class="text-5xl text-center font-medium">Let's go for some <span
+                class="text-violet-500 font-bold">Mooooooooney</span>!</h1>
+    </header>
+
+    <main class="container mx-auto">
+        <section class="grid grid-cols-3 gap-4 my-16">
+            <div class="card bg-green-400">
+                <div class="card-body">
+                    <h4 class="text-xl font-normal">Deposit</h4>
+                    <h2 class="text-5xl font-medium">$ <span id="deposit-amount">00</span></h2>
+                </div>
+            </div>
+
+            <div class="card bg-warning">
+                <div class="card-body">
+                    <h4 class="text-xl font-normal">Withdraw</h4>
+                    <h2 class="text-5xl font-medium">$ <span id="withdraw-amount">00</span></h2>
+                </div>
+            </div>
+
+            <div class="card bg-info">
+                <div class="card-body">
+                    <h4 class="text-xl font-normal">Balance</h4>
+                    <h2 class="text-5xl font-medium">$ <span id="balance-amount">2000</span></h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-2 gap-4">
+            <div class="space-y-8 bg-pink-400 px-8 py-12 rounded-lg">
+                <h2 class="text-3xl font-medium">Deposit</h2>
+                <input type="text" id="deposit" placeholder="$ Amount you want to deposit" class="input input-bordered input-primary w-full"
+                    required />
+                <button id="btn-deposit" class="btn btn-warning border-2">Deposit</button>
+            </div>
+
+            <div class="space-y-8 bg-amber-300 px-8 py-12 rounded-lg">
+                <h2 class="text-3xl font-medium">Withdraw</h2>
+                <input type="text" id="withdraw" placeholder="$ Amount you want to withdraw" class="input input-bordered input-primary w-full"
+                    required />
+                <button id="btn-withdraw" class="btn btn-error border-2">Withdraw</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/vault.js"></script>
+</body>
+
+</html>
